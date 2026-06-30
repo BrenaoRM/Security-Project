@@ -28,7 +28,7 @@ bool openOrCreateVault(Vault& vault, std::string& masterPassword) {
             return false;
         }
         if (!VaultFile::load(masterPassword, vault)) {
-            std::cout << "Senha incorreta ou arquivo de cofre inválido." << std::endl;
+            std::cout << "Senha incorreta ou arquivo de cofre invalido." << std::endl;
             return false;
         }
         std::cout << "Cofre carregado com sucesso." << std::endl;
@@ -45,7 +45,7 @@ bool openOrCreateVault(Vault& vault, std::string& masterPassword) {
         secure_zero(&confirmPassword[0], confirmPassword.size());
     }
     if (!valid) {
-        std::cout << "Senhas não conferem ou são inválidas." << std::endl;
+        std::cout << "Senhas nao conferem ou sao invalidas." << std::endl;
         return false;
     }
     if (!VaultFile::save(vault, masterPassword)) {
@@ -59,7 +59,7 @@ bool openOrCreateVault(Vault& vault, std::string& masterPassword) {
 void handleAddEntry(Vault& vault) {
     VaultEntry entry;
     readLine(entry.site, "Site: ");
-    readLine(entry.username, "Usuário: ");
+    readLine(entry.username, "Usuario: ");
     readLine(entry.password, "Senha: ");
     if (entry.site.empty() || entry.username.empty() || entry.password.empty()) {
         std::cout << "Todos os campos devem ser preenchidos." << std::endl;
@@ -76,17 +76,17 @@ void handleRemoveEntry(Vault& vault) {
     }
     vault.print();
     std::string indexText;
-    readLine(indexText, "Número da entrada a remover: ");
+    readLine(indexText, "Numero da entrada a remover: ");
     try {
         size_t index = std::stoul(indexText);
         if (index == 0 || index > vault.entries.size()) {
-            std::cout << "Índice inválido." << std::endl;
+            std::cout << "Indice invalido." << std::endl;
             return;
         }
         vault.removeEntry(index - 1);
         std::cout << "Entrada removida." << std::endl;
     } catch (const std::exception&) {
-        std::cout << "Índice inválido." << std::endl;
+        std::cout << "Indice invalido." << std::endl;
     }
 }
 
@@ -115,7 +115,7 @@ void runMenuLoop(Vault& vault, const std::string& masterPassword) {
                 std::cout << "Cofre salvo e encerrado." << std::endl;
                 return;
             default:
-                std::cout << "Opção inválida." << std::endl;
+                std::cout << "Opcao invalida." << std::endl;
                 break;
         }
     }
