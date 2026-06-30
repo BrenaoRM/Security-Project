@@ -1,0 +1,20 @@
+# Binários compilados
+*.exe
+*.obj
+*.o
+*.out
+
+# Arquivos de pré-processamento / debug
+*.i
+*.pdb
+*.ilk
+
+# Cofre real (contém senhas cifradas — não deve ir pro repositório)
+vault.dat
+
+# Pastas de build comuns (caso use CMake/Visual Studio)
+/build/
+/x64/
+/Debug/
+/Release/
+.vs/
