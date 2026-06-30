@@ -82,7 +82,7 @@ void Vault::print() const {
     for (size_t i = 0; i < entries.size(); ++i) {
         const auto& entry = entries[i];
         std::cout << "[" << (i + 1) << "] Site: " << entry.site
-                  << " | Usuário: " << entry.username
+                  << " | Usuario: " << entry.username
                   << " | Senha: " << entry.password << '\n';
     }
 }
